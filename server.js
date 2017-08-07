@@ -6,10 +6,11 @@ var app = express();
 app.use(morgan('combined'));
 
 
-var articleOne= {
+var articles = {
+    article-one: {   
     title: 'Article One | Nibu M John',
     heading: 'Article One',
-    date: 'Aug 07, 2017',
+    date: 'Aug 05, 2017',
     content:`
     <p>
              Here I am typing the content of my web page.. Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..
@@ -20,7 +21,36 @@ var articleOne= {
         <p>
              Here I am typing the content of my web page.. Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..
              </p> `
+},
+    article-two: {
+        title: 'Article Two | Nibu M John',
+    heading: 'Article Two',
+    date: 'Aug 06, 2017',
+    content:`
+    <p>
+             Here I am typing the content of my web page.. Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..
+        </p> 
+        <p>
+             Here I am typing the content of my web page.. Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..
+        </p> 
+        `
+    },
+    
+    article-three: {
+        title: 'Article Three | Nibu M John',
+    heading: 'Article Three',
+    date: 'Aug 07, 2017',
+    content:`
+    <p>
+             Here I am typing the content of my web page.. Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..
+        </p> 
+    
+        <p>
+             Here I am typing the content of my web page.. Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..
+             </p> `
+}
 };
+
 function createTemplate (data){
   var title = data.title;
   var heading = data.heading;
@@ -67,8 +97,10 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res){
-    res.send(createTemplate(articleOne));
+app.get('/articleName', function (req, res){
+    // artilceName == article-one
+    //article[articleName] == {} content object for article one
+    res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/article-two', function (req, res){
