@@ -10,7 +10,7 @@ var articleOne= {
     title: 'Article One | Nibu M John',
     heading: 'Article One',
     date: 'Aug 07, 2017',
-    contant:`
+    content:`
     <p>
              Here I am typing the content of my web page.. Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..Here I am typing the content of my web page..
         </p> 
