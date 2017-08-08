@@ -14,3 +14,14 @@ var marginLeft= 0;
     var interval = setInterval (moveRight, 50);
     };
     
+//counter code
+var button = document.getElementById('counter');
+var counter = 0;
+
+button.click = function(){
+    
+    
+    counter = counter + 1;
+    var span = document.getElementById('count');
+    span.InnerHTML = conter.toString();
+};
